@@ -27,7 +27,7 @@ const EventDetails = async({params:{id}, searchParams}:SearchParamProps) => {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="flex gap-3">
                 <p className="p-bold-20 rounded-full bg-green-100 px-5 py-2 text-green-600">
-                  {event.isFree ? "Free" : `$${event.price}`}
+                  {event.isFree ? "Free" : `£${event.price}`}
                 </p>
                 <p className="p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500">
                   {event.category.name}
@@ -67,10 +67,10 @@ const EventDetails = async({params:{id}, searchParams}:SearchParamProps) => {
         </div>
       </div>
     </section>
-    {/* This section is displaying all other events that have the same category as the current event page. */}
+   
     <section className='wrapper my-8 flex flex-col gap-8 md:gap-12'>
       <h2 className="h2-bold">Related Events</h2>
-      <Collection data={relatedEvents?.data} emptyTitle="No events found" emptySubtext="Come back later" collectionType="All_Events" limit={6} page={1} totalPages={2} />
+      <Collection data={relatedEvents?.data} emptyTitle="No events found" emptySubtext="Come back later" collectionType="All_Events" limit={3} page={searchParams.page as string} totalPages={relatedEvents?.totalPages} />
     </section>
     </>
     
