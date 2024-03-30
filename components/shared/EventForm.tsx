@@ -22,6 +22,7 @@ import { useRouter } from "next/navigation"
 import { createEvent, updateEvent } from "@/lib/actions/event.actions"
 import { IEvents } from "@/lib/database/models/events.model"
 import { revalidatePath } from "next/cache"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 
 type EventFormProps = {
@@ -150,11 +151,13 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl className="h-72">
+                    
                     <FileUploader 
                       onFieldChange={field.onChange}
                       imageUrl={field.value}
                       setFiles={setFiles}
                     />
+                    
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -329,6 +332,12 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
           ): `${type} Event `}</Button>
         
       </form>
+    <Alert variant="default" className="my-3">
+        <AlertTitle>Notice</AlertTitle>
+        <AlertDescription>
+          If the submit button is not doing anything, please make sure the image you have used is below 4MB.
+        </AlertDescription>
+      </Alert>
     </Form>
   )
 }
