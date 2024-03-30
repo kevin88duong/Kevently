@@ -21,6 +21,7 @@ import { Checkbox } from "../ui/checkbox"
 import { useRouter } from "next/navigation"
 import { createEvent, updateEvent } from "@/lib/actions/event.actions"
 import { IEvents } from "@/lib/database/models/events.model"
+import { revalidatePath } from "next/cache"
 
 
 type EventFormProps = {
@@ -326,6 +327,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
           {form.formState.isSubmitting ? (
             'Submitting...'
           ): `${type} Event `}</Button>
+        
       </form>
     </Form>
   )
