@@ -24,7 +24,7 @@ export default async function Home({searchParams}:SearchParamProps) {
   
   return (
     <>
-    <section className="bg-primary-50 py-5 md:py-10">
+    <section className="bg-primary-50 bg-contain py-5 md:py-10">
       <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
         <div className="flex flex-col justify-content gap-8"> 
           <h1 className="h1-bold">Host your own events, Connect to others</h1>
@@ -35,7 +35,7 @@ export default async function Home({searchParams}:SearchParamProps) {
             </Link>
           </Button>
         </div>
-        <Image src="/assets/images/hero_2.png" alt="" width={800} height={800} className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]" />
+        <Image src="/assets/images/hero_2.png" alt="" width={1000} height={1000} className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]" />
       </div>
     </section>
     <section id="events" className='wrapper my-8 flex flex-col gap-8 md:gap-12'>

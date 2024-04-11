@@ -20,7 +20,7 @@ const EventDetails = async({params:{id}, searchParams}:SearchParamProps) => {
     <>
     <section className="flex justify-center bg-primary-50 bg-contain">
       <div className="grid grid-cols-1 md:grid-cols-2 ">
-        <Image src={event.imageUrl} alt="" width="1000" height="1000" className="h-full min-h-[300px] max-h-[900px] min-w-[1100px] object-center "/>
+        <Image src={event.imageUrl} alt="" width="1000" height="1000" className="h-full min-h-[300px] object-fill object-center "/>
         <div className="flex w-full flex-col p-5 gap-8 md:p-10">
           <div className="flex flex-col gap-6">
             <h2 className="h2-bold">{event.title}</h2>
